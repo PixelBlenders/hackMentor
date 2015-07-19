@@ -1,0 +1,23 @@
+<template name="postsList">
+  <div class="posts page">
+      <div class="orderby">Questions By <a href="#" class="dropdown-toggle" data-toggle="dropdown">select <span class="caret"></span></a>
+      <ul class="notification dropdown-menu dropdown-menu-1 dropdown-menu-right">
+      <li><a href="{{pathFor 'bestPosts'}}">Popular</a></li>
+      <li><a href="{{pathFor 'newPosts'}}">New</a></li>
+  </ul>
+      </div>
+    <div class="wrapper">
+      {{#each posts}}
+        {{> postItem}}
+      {{/each}}
+    </div>
+    
+    {{#if nextPath}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
+    {{else}}
+      {{#unless ready}}
+        {{> spinner}}
+      {{/unless}}
+    {{/if}}
+  </div>
+</template>

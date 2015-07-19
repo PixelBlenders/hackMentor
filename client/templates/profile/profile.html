@@ -1,0 +1,13 @@
+<template name="profile">
+    {{#if currentUser}}
+  <div class="prof-name"><img src='dp.png' class='prof-dp'> @{{name}}<br> {{#if dist}}<span>{{dist}} kms away from you!</span>{{/if}}</div>
+    <div class="scores">{{points}}<span>points</span> {{ques}}<span>questions</span>  {{ans}}<span>answers</span></div>
+    
+
+<!--    I have{{lat}} and {{lng}}.-->
+    
+    
+    {{else}}
+Please sign in to view the profile
+    {{/if}}
+</template>

@@ -1,0 +1,52 @@
+<template name="header">
+  <nav class="navbar" id="nav">
+    <div class="navbar-top">
+      <a class="title" href="{{pathFor 'home'}}" id="hme">HackMentor</a>
+        <div class="login-buttons">{{> loginButtons}}
+            {{#if currentUser}}
+        <img class="dp" src="dp.png" />
+            {{/if}}
+        </div>
+    </div>
+      <div class="navbar-bot">
+          
+      <a class="pxbtn btn-green" href="{{pathFor 'postSubmit'}}" id="ask">Ask</a>
+      <a class="pxbtn btn-red" href="{{pathFor 'postSubmit'}}" id="sos">SOS</a>
+          {{#if currentUser}}
+      <a class="pxbtn btn-orange" href="/profile/{{id}}" id="pro">Profile</a>
+          {{/if}}
+      </div>
+      {{#if currentUser}}
+          {{updateLocation}}
+          {{addMeta}}
+<!--
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="nav navbar-nav">
+        <li class="{{activeRouteClass 'home' 'newPosts'}}">
+          <a href="{{pathFor 'newPosts'}}">New</a>
+        </li>
+        <li class="{{activeRouteClass  'bestPosts'}}">
+          <a href="{{pathFor 'bestPosts'}}">Popular</a>
+        </li>
+        {{#if currentUser}}
+          {{updateLocation}}
+          {{addMeta}}
+          <li class="{{activeRouteClass 'postSubmit'}}">
+            <a href="{{pathFor 'postSubmit'}}">Ask a question</a>
+          </li>
+          <li class="dropdown">
+            {{> notifications}}
+          </li>
+        {{/if}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div>
+-->
+      <li class="dropdown notif-dropdown">
+            {{> notifications}}
+          </li>
+      {{/if}}
+  </nav>
+</template>
