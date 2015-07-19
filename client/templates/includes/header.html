@@ -1,6 +1,7 @@
 <template name="header">
   <nav class="navbar" id="nav">
     <div class="navbar-top">
+        <img class="logo" src="logo.png" />
       <a class="title" href="{{pathFor 'home'}}" id="hme">HackMentor</a>
         <div class="login-buttons">{{> loginButtons}}
             {{#if currentUser}}

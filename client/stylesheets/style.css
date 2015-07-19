@@ -431,3 +431,10 @@ background: #A00006;
     font-size: 28px !important;
     font-weight: 100 !important;
 }
+.logo {
+    position: fixed;
+    left: 5%;
+    top: 30px;
+    height: 100px;
+    width: 100px;
+}
